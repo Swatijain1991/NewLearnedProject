@@ -1,0 +1,32 @@
+.landing-page {
+  background-image: url('assets/images/landingPicture.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.get-started {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.get-started:hover {
+  background-color: #218838;
+}

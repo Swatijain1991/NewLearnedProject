@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Import your pages/components
+import LandingPage from './LandingPage';
+import ProductListingPage from './ProductListingPage';
+import CartPage from './CartPage';
 
+const App = () => {
   return (
-    <>
+    <Router>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        {/* Define Routes */}
+        <Routes>
+          {/* Landing Page Route */}
+          <Route path="/" element={<LandingPage />} />
 
-export default App
+          {/* Product Listing Page Route */}
+          <Route path="/products" element={<ProductListingPage />} />
+
+          {/* Cart Page Route */}
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
